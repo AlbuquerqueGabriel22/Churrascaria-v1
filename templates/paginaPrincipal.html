@@ -26,7 +26,11 @@
         <section class="intro reveal" id="cortes"><p class="eyebrow">A nossa assinatura</p><h2>Comer bem é um<br><em>ritual.</em></h2><p>Ingredientes honestos, técnica apurada e o calor de uma casa que recebe você como parte da família.</p></section>
         <section class="feature-grid" aria-label="Diferenciais da casa"><article class="feature-card reveal container-imagens1" style="--card-image: url('{{ url_for('static', filename='images/569f1a90c9aa3ec295cc7ac7eb5f39a7.jpg') }}')"><span class="feature-index">01</span><span class="feature-icon">◌</span><h3>Brasa viva</h3><p>O calor certo transforma cortes simples em grandes lembranças.</p></article><article class="feature-card reveal container-imagens2" style="--card-image: url('{{ url_for('static', filename='images/D_NQ_NP_2X_707256-MLA111448135392_052026-F.webp') }}')"><span class="feature-index">02</span><span class="feature-icon">◒</span><h3>Cortes nobres</h3><p>Seleção cuidadosa, preparo preciso e respeito à origem.</p></article><article class="feature-card reveal container-imagens3" style="--card-image: url('{{ url_for('static', filename='images/ea01119d036781990dfd54437533cf4e.jpg') }}')"><span class="feature-index">03</span><span class="feature-icon">✦</span><h3>Receber bem</h3><p>Uma experiência leve, atenta e feita para durar à mesa.</p></article></section>
     </main>
-    <footer class="site-footer"><span>BRASA &amp; BAIXIO</span><span>Churrascaria · São Paulo</span><a href="{{ url_for('contato') }}">Entre em contato ↗</a></footer>
+    <footer class="site-footer"><span>BRASA &amp; BAIXIO</span><span>Churrascaria · São Paulo</span>
+        
+        <a class="adev" href="{{ url_for('contato') }}">Entre em contato ↗</a>
+    
+    </footer>
     
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

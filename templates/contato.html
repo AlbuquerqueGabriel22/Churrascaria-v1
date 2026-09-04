@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Contato</title>
+    <title>Contato | Brasa &amp; Baixio</title>
 </head>
 <body>
     <div class="container-contact">
-        <h1>Contato</h1>
-        <p>Este é um exemplo de uma página de contato.</p>
-        <ul>
-            <li>Email: contato@exemplo.com</li>
-            <li>Telefone: (11) 1234-5678</li>
-            <li>Email: contato@exemplo.com</li>
-            <li>Email: contato@exemplo.com</li>
-            <li>Email: contato@exemplo.com</li>
-        </ul>
-        <a  class="btn-custom" href="{{ url_for('paginaPrincipal') }}">Voltar para início</a>
+        <p class="eyebrow">Brasa &amp; Baixio</p>
+        <h1>Fale com<br><em>a nossa casa.</em></h1>
+        <p>Escolha o seu canal. Estamos prontos para receber sua mensagem, sua reserva ou apenas uma boa conversa.</p>
+        <div class="contact-list">
+            <a class="contact-channel" href="mailto:contato@brasaebaixio.com">
+                <span class="contact-symbol" aria-hidden="true">@</span>
+                <span><small>E-mail</small><strong>contato@brasaebaixio.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-channel" href="https://wa.me/551112345678" target="_blank" rel="noreferrer">
+                <span class="contact-symbol" aria-hidden="true">◉</span>
+                <span><small>WhatsApp</small><strong>(11) 12345-6789</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-channel" href="https://instagram.com/brasaebaixio" target="_blank" rel="noreferrer">
+                <span class="contact-symbol" aria-hidden="true">◎</span>
+                <span><small>Instagram</small><strong>@brasaebaixio</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-channel" href="https://tiktok.com/@brasaebaixio" target="_blank" rel="noreferrer">
+                <span class="contact-symbol" aria-hidden="true">♪</span>
+                <span><small>TikTok</small><strong>@brasaebaixio</strong></span><span class="contact-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+        <a class="btn-custom" href="{{ url_for('paginaPrincipal') }}">Voltar para início <span aria-hidden="true">↗</span></a>
 
     </div>
     <footer>

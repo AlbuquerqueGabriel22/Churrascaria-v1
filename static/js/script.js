@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = [...document.querySelectorAll(".hero-slide")];
   const dots = [...document.querySelectorAll(".slide-dot")];
   const revealItems = document.querySelectorAll(".reveal");
+  const recipeItems = document.querySelectorAll(".reveal-recipe");
   let currentSlide = 0;
   let timer;
 
@@ -17,5 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealObserver = new IntersectionObserver((entries, observer) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.14 });
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  const recipeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
+  }, { threshold: 0.22 });
+  recipeItems.forEach((item) => recipeObserver.observe(item));
 });
 

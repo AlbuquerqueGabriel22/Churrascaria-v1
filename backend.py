@@ -10,5 +10,9 @@ def paginaPrincipal():
 def contato():
     return render_template('contato.html')
 
+@backend.route('/receitas')
+def pratosReceitas():
+    return render_template('pratosReceitas.html')
+
 if __name__ == '__main__':
     backend.run(debug=True)

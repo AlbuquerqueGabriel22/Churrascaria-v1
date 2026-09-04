@@ -13,25 +13,34 @@
     </header>
     <main class="recipes-page">
         <section class="recipes-intro reveal-recipe">
-            <p class="eyebrow">Caderno da casa · 04 receitas</p>
+            <p class="eyebrow">Caderno da casa · sabores para cada momento</p>
             <h1>Receitas que<br><em>contam histórias.</em></h1>
             <p>O fogo é só o começo. Descubra os pratos que fazem da nossa mesa um lugar para ficar.</p>
         </section>
+        <div class="recipe-filters" role="group" aria-label="Filtrar pratos por categoria">
+            <button class="recipe-filter is-active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="recipe-filter" type="button" data-filter="churrascos" aria-pressed="false">Churrascos</button>
+            <button class="recipe-filter" type="button" data-filter="rodizios" aria-pressed="false">Rodízios</button>
+            <button class="recipe-filter" type="button" data-filter="combos" aria-pressed="false">Combos</button>
+            <button class="recipe-filter" type="button" data-filter="bebidas" aria-pressed="false">Bebidas</button>
+            <button class="recipe-filter" type="button" data-filter="sobremesas" aria-pressed="false">Sobremesas</button>
+        </div>
+        <p class="filter-empty" hidden>Estamos preparando novidades para esta categoria. Em breve ela estará na mesa.</p>
         <section class="recipes-list" aria-label="Receitas da casa">
-            <article class="recipe-story reveal-recipe">
+            <article class="recipe-story reveal-recipe" data-category="churrascos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/3fee43f885e97868d014e1a85865ce1b.jpg') }}" alt="Carne cozida ao molho com cenouras, pão e vinho tinto"></div>
                 <div class="recipe-copy"><span class="recipe-number">01 / DA PANELA</span><h2>Carne ao vinho<br><em>com ervas frescas.</em></h2><p>Uma carne macia, cozida lentamente no vinho tinto com cenouras e ervas. O tipo de prato que pede tempo, pão fresco e uma mesa sem pressa.</p><span class="recipe-detail">Cozimento lento · 4 pessoas</span></div>
             </article>
-            <article class="recipe-story recipe-story-reverse reveal-recipe">
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="churrascos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/a17e6815b49ce393f1401f62a734d75e.jpg') }}" alt="Filé fatiado servido com molho escuro e ervas"></div>
                 <div class="recipe-copy"><span class="recipe-number">02 / DO CORTE</span><h2>Filé fatiado<br><em>ao molho da casa.</em></h2><p>O corte selado por fora e rosado por dentro encontra um molho intenso, finalizado com ervas e um toque de manteiga.</p><span class="recipe-detail">Ponto perfeito · 2 pessoas</span></div>
             </article>
-            <article class="recipe-story reveal-recipe">
+            <article class="recipe-story reveal-recipe" data-category="churrascos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/f3c28a336a05a8979a433721bd2ce4ce.jpg') }}" alt="Bife grelhado com tomates, legumes e batatas"></div>
                 <div class="recipe-copy"><span class="recipe-number">03 / DA BRASA</span><h2>Bife na brasa<br><em>com legumes tostados.</em></h2><p>Fogo alto, crosta marcada e o sabor limpo da carne. Servido com legumes tostados e batatas douradas.</p><span class="recipe-detail">Brasa viva · Serviço individual</span></div>
             </article>
-            <article class="recipe-story recipe-story-reverse reveal-recipe">
-                <div class="recipe-photo"><img src="{{ url_for('static', filename='nova.jpg') }}" alt="Seleção de cortes grelhados servida em uma travessa"></div>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/brasa a mesa.jpg') }}" alt="Seleção de cortes grelhados servida em uma travessa"></div>
                 <div class="recipe-copy"><span class="recipe-number">04 / PARA COMPARTILHAR</span><h2>Seleção da brasa<br><em>à mesa.</em></h2><p>Cortes grelhados no ponto, fatiados para compartilhar e acompanhados por molhos da casa. Uma receita que começa na escolha e termina na conversa.</p><span class="recipe-detail">Para dividir · Mesa farta</span></div>
             </article>
         </section>

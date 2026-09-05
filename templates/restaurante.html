@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Nossa história | Brasa &amp; Baixio</title>
+    <title>Nossa história | Dom do Sabor</title>
 </head>
 <body>
     <header class="story-header">
-        <a class="brand story-brand" href="{{ url_for('paginaPrincipal') }}" aria-label="Brasa e Baixio, início"><span class="brand-mark">B</span><span><strong>BRASA</strong><small>&amp; BAIXIO</small></span></a>
+        <a class="brand story-brand" href="{{ url_for('paginaPrincipal') }}" aria-label="Dom do Sabor, início"><span class="brand-mark">D</span><span><strong>DOM</strong><small>DO SABOR</small></span></a>
+        <nav class="page-nav" aria-label="Navegação da casa"><a class="is-current" href="{{ url_for('restaurante') }}">História</a><a href="{{ url_for('pratosReceitas') }}">Cardápio</a><a href="{{ url_for('contato') }}">Contato</a></nav>
         <a class="story-back" href="{{ url_for('paginaPrincipal') }}">Voltar ao início <span aria-hidden="true">↗</span></a>
     </header>
     <main class="story-page">
         <section class="story-hero">
             <p class="eyebrow">Desde 1987 · Uma casa feita de encontros</p>
             <h1>Nossa história<br><em>vai à mesa.</em></h1>
-            <p>Há quase quatro décadas, a Brasa &amp; Baixio reúne fogo, cuidado e pessoas em torno de uma mesma vontade: receber bem.</p>
+            <p>Há quase quatro décadas, o Dom do Sabor reúne fogo, cuidado e pessoas em torno de uma mesma vontade: receber bem.</p>
         </section>
         <section class="story-introduction">
             <div class="story-introduction-copy">
@@ -32,7 +33,7 @@
         </section>
         <section class="story-cta"><p class="eyebrow">A mesa está posta</p><h2>Venha fazer parte<br><em>da nossa história.</em></h2><a class="button button-light" href="{{ url_for('pratosReceitas') }}">Conheça o cardápio <span aria-hidden="true">↗</span></a></section>
     </main>
-    <footer class="site-footer story-footer"><span>BRASA &amp; BAIXIO</span><span>Churrascaria · São Paulo</span><a href="{{ url_for('contato') }}">Entre em contato ↗</a></footer>
+    <footer class="site-footer story-footer"><span>DOM DO SABOR</span><span>Churrascaria · São Paulo</span><a href="{{ url_for('contato') }}">Entre em contato ↗</a></footer>
 
 </body>
 </html>

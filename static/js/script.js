@@ -45,5 +45,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (filterEmpty) filterEmpty.hidden = visibleItems > 0;
   }));
+
+  const restaurantSlider = document.querySelector(".restaurant-slider");
+  if (restaurantSlider) {
+    const restaurantSlides = [...restaurantSlider.querySelectorAll(".restaurant-preview-card")];
+    const restaurantButtons = [...restaurantSlider.querySelectorAll(".restaurant-slider-button")];
+    const restaurantStatus = restaurantSlider.querySelector(".restaurant-slider-status");
+    let restaurantIndex = 0;
+    let restaurantTimer;
+
+    const showRestaurantSlide = (direction) => {
+      const nextIndex = (restaurantIndex + direction + restaurantSlides.length) % restaurantSlides.length;
+      if (nextIndex === restaurantIndex) return;
+      const currentSlide = restaurantSlides[restaurantIndex];
+      currentSlide.classList.remove("is-active");
+      currentSlide.classList.add("is-leaving");
+      restaurantSlides[nextIndex].classList.add("is-active");
+      restaurantSlides[nextIndex].setAttribute("aria-hidden", "false");
+      currentSlide.setAttribute("aria-hidden", "true");
+      window.setTimeout(() => currentSlide.classList.remove("is-leaving"), 850);
+      restaurantIndex = nextIndex;
+      if (restaurantStatus) restaurantStatus.innerHTML = `${String(restaurantIndex + 1).padStart(2, "0")} <i>/ 04</i>`;
+    };
+    const restartRestaurantTimer = () => {
+      window.clearInterval(restaurantTimer);
+      restaurantTimer = window.setInterval(() => showRestaurantSlide(1), 5200);
+    };
+    restaurantButtons.forEach((button) => button.addEventListener("click", () => {
+      showRestaurantSlide(button.dataset.sliderDirection === "previous" ? -1 : 1);
+      restartRestaurantTimer();
+    }));
+    restartRestaurantTimer();
+  }
 });
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Nossa história | Brasa &amp; Baixio</title>
+</head>
+<body>
+    <header class="story-header">
+        <a class="brand story-brand" href="{{ url_for('paginaPrincipal') }}" aria-label="Brasa e Baixio, início"><span class="brand-mark">B</span><span><strong>BRASA</strong><small>&amp; BAIXIO</small></span></a>
+        <a class="story-back" href="{{ url_for('paginaPrincipal') }}">Voltar ao início <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="story-page">
+        <section class="story-hero">
+            <p class="eyebrow">Desde 1987 · Uma casa feita de encontros</p>
+            <h1>Nossa história<br><em>vai à mesa.</em></h1>
+            <p>Há quase quatro décadas, a Brasa &amp; Baixio reúne fogo, cuidado e pessoas em torno de uma mesma vontade: receber bem.</p>
+        </section>
+        <section class="story-introduction">
+            <div class="story-introduction-copy">
+                <p class="eyebrow">O começo de tudo</p>
+                <h2>Uma ideia simples,<br><em>um sabor duradouro.</em></h2>
+                <p>Desde 1987, nossa cozinha é um ponto de encontro para quem acredita que comer bem também é criar memória. O tempo trouxe novos pratos, novas equipes e muitas histórias, mas manteve intacto o respeito pelo ingrediente e por cada pessoa que atravessa nossa porta.</p>
+            </div>
+            <figure class="story-image story-image-wide"><img src="{{ url_for('static', filename='images/historia/2c3f7941271f1d454a72a0b36323717b.jpg') }}" alt="Equipe de cozinha reunida durante um preparo"></figure>
+        </section>
+        <section class="story-timeline" aria-label="Momentos da história do restaurante">
+            <article class="story-moment"><figure class="story-image"><img src="{{ url_for('static', filename='images/historia/408ab9a17cb2a7f0619ad4611340446d.jpg') }}" alt="Equipe do restaurante reunida no salão"></figure><div><span class="story-number">01</span><h2>Gente que faz<br><em>a casa acontecer.</em></h2><p>Por trás de cada prato existe uma equipe que compartilha técnica, atenção e orgulho pelo que entrega.</p></div></article>
+            <article class="story-moment story-moment-reverse"><figure class="story-image"><img src="{{ url_for('static', filename='images/historia/4a59c14323d70648939b9970f125f646.jpg') }}" alt="Garçonete servindo uma mesa durante uma celebração"></figure><div><span class="story-number">02</span><h2>O salão guarda<br><em>muitas histórias.</em></h2><p>Almoços demorados, brindes inesperados e encontros importantes fazem parte da nossa memória tanto quanto a brasa.</p></div></article>
+            <article class="story-moment"><figure class="story-image"><img src="{{ url_for('static', filename='images/historia/7dda006c962b7e2d59375b4d1ee5687f.jpg') }}" alt="Convidados celebrando juntos em uma mesa iluminada por velas"></figure><div><span class="story-number">03</span><h2>O melhor capítulo<br><em>ainda é o próximo.</em></h2><p>A história continua toda vez que você escolhe celebrar aqui. A próxima lembrança pode começar com uma mesa reservada.</p><a class="button button-dark" href="{{ url_for('contato') }}">Fale com a casa <span aria-hidden="true">↗</span></a></div></article>
+        </section>
+        <section class="story-cta"><p class="eyebrow">A mesa está posta</p><h2>Venha fazer parte<br><em>da nossa história.</em></h2><a class="button button-light" href="{{ url_for('pratosReceitas') }}">Conheça o cardápio <span aria-hidden="true">↗</span></a></section>
+    </main>
+    <footer class="site-footer story-footer"><span>BRASA &amp; BAIXIO</span><span>Churrascaria · São Paulo</span><a href="{{ url_for('contato') }}">Entre em contato ↗</a></footer>
+
+</body>
+</html>

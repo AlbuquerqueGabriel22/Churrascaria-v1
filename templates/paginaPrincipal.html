@@ -9,7 +9,7 @@
 <body>
     <header class="site-header">
         <a class="brand" href="{{ url_for('paginaPrincipal') }}" aria-label="Brasa e Baixio, início"><span class="brand-mark">B</span><span><strong>BRASA</strong><small>&amp; BAIXIO</small></span></a>
-        <nav class="main-nav" aria-label="Navegação principal"><a class="active" href="#experiencia">Experiência</a><a href="#cortes">Cortes</a><a href="{{ url_for('pratosReceitas') }}">Receitas</a><a href="{{ url_for('contato') }}">Contato</a></nav>
+        <nav class="main-nav" aria-label="Navegação principal"><a class="active" href="#experiencia">Experiência</a><a href="#cortes">Cortes</a><a href="{{ url_for('restaurante') }}">Nossa história</a><a href="{{ url_for('pratosReceitas') }}">Receitas</a><a href="{{ url_for('contato') }}">Contato</a></nav>
         <a class="header-action" href="#cortes">Reservar mesa <span aria-hidden="true">↗</span></a>
     </header>
 
@@ -22,6 +22,32 @@
             </div>
             <div class="slide-controls" aria-label="Controles do destaque"><button class="slide-dot is-active" type="button" aria-label="Mostrar destaque 1"></button><button class="slide-dot" type="button" aria-label="Mostrar destaque 2"></button><button class="slide-dot" type="button" aria-label="Mostrar destaque 3"></button></div><span class="scroll-note">Role para descobrir <span aria-hidden="true">↓</span></span>
         </section>
+
+
+
+        <section class="restaurant-preview" aria-labelledby="restaurant-preview-title">
+            <div class="restaurant-preview-heading">
+                <p class="eyebrow">Muito além da brasa</p>
+                <h2 id="restaurant-preview-title">Conheça a casa<br><em>por inteiro.</em></h2>
+                <p>Da cozinha ao salão, cada detalhe foi pensado para transformar uma refeição em uma lembrança.</p>
+                <a class="button button-dark" href="{{ url_for('restaurante') }}">Conheça nossa história <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="restaurant-slider" aria-label="Experiências da casa">
+                <div class="restaurant-preview-grid">
+                    <article class="restaurant-preview-card is-active" aria-hidden="false" style="--preview-image: url('{{ url_for('static', filename='images/compartilhe conosco/61KuHmdsn4L._AC_SX679_.jpg') }}')"><span>01</span><h3>Experiência<br><em>impecável</em></h3></article>
+                    <article class="restaurant-preview-card" aria-hidden="true" style="--preview-image: url('{{ url_for('static', filename='images/compartilhe conosco/a03f99f3a3dab53127ded1c4084e226d.jpg') }}')"><span>02</span><h3>Ambiente<br><em>aconchegante</em></h3></article>
+                    <article class="restaurant-preview-card" aria-hidden="true" style="--preview-image: url('{{ url_for('static', filename='images/compartilhe conosco/da0c189bac3bc4c2776cc609d5fe88ec.jpg') }}')"><span>03</span><h3>Atendimento<br><em>de qualidade</em></h3></article>
+                    <article class="restaurant-preview-card" aria-hidden="true" style="--preview-image: url('{{ url_for('static', filename='images/compartilhe conosco/f550b7b7ac0a73b42ee5b1e541958231.jpg') }}')"><span>04</span><h3>Vivencie<br><em>momentos</em></h3></article>
+                </div>
+                <div class="restaurant-slider-controls" aria-label="Controles das experiências">
+                    <button class="restaurant-slider-button" type="button" data-slider-direction="previous" aria-label="Experiência anterior">↑</button>
+                    <span class="restaurant-slider-status">01 <i>/ 04</i></span>
+                    <button class="restaurant-slider-button" type="button" data-slider-direction="next" aria-label="Próxima experiência">↓</button>
+                </div>
+            </div>
+        </section>
+
+
 
         <section class="intro reveal" id="cortes"><p class="eyebrow">A nossa assinatura</p><h2>Comer bem é um<br><em>ritual.</em></h2><p>Ingredientes honestos, técnica apurada e o calor de uma casa que recebe você como parte da família.</p><a class="button button-light intro-action" href="{{ url_for('pratosReceitas') }}">Ver pratos e receitas <span aria-hidden="true">↗</span></a></section>
         <section class="feature-grid" aria-label="Diferenciais da casa"><article class="feature-card reveal container-imagens1" style="--card-image: url('{{ url_for('static', filename='images/569f1a90c9aa3ec295cc7ac7eb5f39a7.jpg') }}')"><span class="feature-index">01</span><span class="feature-icon">◌</span><h3>Brasa viva</h3><p>O calor certo transforma cortes simples em grandes lembranças.</p></article><article class="feature-card reveal container-imagens2" style="--card-image: url('{{ url_for('static', filename='images/D_NQ_NP_2X_707256-MLA111448135392_052026-F.webp') }}')"><span class="feature-index">02</span><span class="feature-icon">◒</span><h3>Cortes nobres</h3><p>Seleção cuidadosa, preparo preciso e respeito à origem.</p></article><article class="feature-card reveal container-imagens3" style="--card-image: url('{{ url_for('static', filename='images/ea01119d036781990dfd54437533cf4e.jpg') }}')"><span class="feature-index">03</span><span class="feature-icon">✦</span><h3>Receber bem</h3><p>Uma experiência leve, atenta e feita para durar à mesa.</p></article></section>

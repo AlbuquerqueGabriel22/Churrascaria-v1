@@ -14,5 +14,9 @@ def contato():
 def pratosReceitas():
     return render_template('pratosReceitas.html')
 
+@backend.route('/restaurante')
+def restaurante():
+    return render_template('restaurante.html')
+
 if __name__ == '__main__':
     backend.run(debug=True)

@@ -125,7 +125,7 @@
             </article>
         </section>
     </main>
-    <footer class="site-footer"><span>DOM DO SABOR</span><span>Churrascaria · São Paulo</span><a href="{{ url_for('contato') }}">Entre em contato ↗</a></footer>
+    <footer class="site-footer"><span>DOM DO SABOR</span><span>Churrascaria · São Paulo</span><a class="home-return-button" href="{{ url_for('paginaPrincipal') }}">Voltar à página principal <span aria-hidden="true">↗</span></a><a class="contact-footer-button" href="{{ url_for('contato') }}">Entre em contato <span aria-hidden="true">↗</span></a></footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

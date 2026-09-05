@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = [...document.querySelectorAll(".hero-slide")];
   const dots = [...document.querySelectorAll(".slide-dot")];
   const revealItems = document.querySelectorAll(".reveal");
-  const recipeItems = document.querySelectorAll(".reveal-recipe");
+  const recipeItems = document.querySelectorAll(".recipes-list .recipe-story[data-category]");
   const recipeFilters = document.querySelectorAll(".recipe-filter");
   const filterEmpty = document.querySelector(".filter-empty");
+  const rodizioSlider = document.querySelector(".rodizio-slider");
   let currentSlide = 0;
   let timer;
 
@@ -26,25 +27,51 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.22 });
   recipeItems.forEach((item) => recipeObserver.observe(item));
 
-  recipeFilters.forEach((filterButton) => filterButton.addEventListener("click", () => {
-    const selectedCategory = filterButton.dataset.filter;
+  const applyRecipeFilter = (selectedCategory, selectedButton) => {
     let visibleItems = 0;
     recipeFilters.forEach((button) => {
-      const isSelected = button === filterButton;
+      const isSelected = button === selectedButton;
       button.classList.toggle("is-active", isSelected);
       button.setAttribute("aria-pressed", isSelected ? "true" : "false");
     });
     recipeItems.forEach((item) => {
-      const shouldShow = selectedCategory === "todos" || item.dataset.category === selectedCategory;
+      const shouldShow = selectedCategory !== "rodizios" && item.dataset.category === selectedCategory;
       item.hidden = !shouldShow;
+      item.classList.toggle("is-filter-visible", shouldShow);
       if (shouldShow) {
         visibleItems += 1;
         item.classList.remove("is-visible");
         window.requestAnimationFrame(() => item.classList.add("is-visible"));
       }
     });
+    if (rodizioSlider) rodizioSlider.hidden = selectedCategory !== "rodizios";
+    if (selectedCategory === "rodizios") visibleItems = 1;
     if (filterEmpty) filterEmpty.hidden = visibleItems > 0;
+  };
+
+  recipeFilters.forEach((filterButton) => filterButton.addEventListener("click", () => {
+    applyRecipeFilter(filterButton.dataset.filter, filterButton);
   }));
+  const initialRecipeFilter = [...recipeFilters].find((button) => button.dataset.filter === "pratos");
+  if (initialRecipeFilter) applyRecipeFilter("pratos", initialRecipeFilter);
+
+  if (rodizioSlider) {
+    rodizioSlider.querySelectorAll(".rodizio-gallery").forEach((gallery) => {
+      const images = [...gallery.querySelectorAll(".rodizio-gallery-image")];
+      const buttons = [...gallery.querySelectorAll(".rodizio-gallery-button")];
+      const status = gallery.querySelector(".rodizio-gallery-status");
+      let currentImage = 0;
+
+      const showImage = (direction) => {
+        currentImage = (currentImage + direction + images.length) % images.length;
+        images.forEach((image, imageIndex) => image.classList.toggle("is-active", imageIndex === currentImage));
+        if (status) status.innerHTML = `${String(currentImage + 1).padStart(2, "0")} <i>/ ${String(images.length).padStart(2, "0")}</i>`;
+      };
+      buttons.forEach((button) => button.addEventListener("click", () => {
+        showImage(button.dataset.galleryDirection === "previous" ? -1 : 1);
+      }));
+    });
+  }
 
   const restaurantSlider = document.querySelector(".restaurant-slider");
   if (restaurantSlider) {

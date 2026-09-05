@@ -13,36 +13,115 @@
         <a class="recipes-back" href="{{ url_for('paginaPrincipal') }}">Voltar ao início <span aria-hidden="true">↗</span></a>
     </header>
     <main class="recipes-page">
-        <section class="recipes-intro reveal-recipe">
+        <section class="recipes-intro">
             <p class="eyebrow">Caderno da casa · sabores para cada momento</p>
             <h1>Receitas que<br><em>contam histórias.</em></h1>
             <p>O fogo é só o começo. Descubra os pratos que fazem da nossa mesa um lugar para ficar.</p>
         </section>
         <div class="recipe-filters" role="group" aria-label="Filtrar pratos por categoria">
-            <button class="recipe-filter is-active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
-            <button class="recipe-filter" type="button" data-filter="churrascos" aria-pressed="false">Churrascos</button>
+            <button class="recipe-filter is-active" type="button" data-filter="pratos" aria-pressed="true">Pratos</button>
             <button class="recipe-filter" type="button" data-filter="rodizios" aria-pressed="false">Rodízios</button>
-            <button class="recipe-filter" type="button" data-filter="combos" aria-pressed="false">Combos</button>
             <button class="recipe-filter" type="button" data-filter="bebidas" aria-pressed="false">Bebidas</button>
             <button class="recipe-filter" type="button" data-filter="sobremesas" aria-pressed="false">Sobremesas</button>
         </div>
         <p class="filter-empty" hidden>Estamos preparando novidades para esta categoria. Em breve ela estará na mesa.</p>
+        <section class="rodizio-slider" hidden aria-label="Opções de rodízio">
+            <article class="rodizio-story recipe-story">
+                <div class="rodizio-gallery" data-gallery="carnes">
+                    <div class="rodizio-gallery-slides">
+                        <img class="rodizio-gallery-image is-active" src="{{ url_for('static', filename='images/rodiziocarne/18e85bdf44209e9320a14be8174761f1.jpg') }}" alt="Picanha assada no espeto">
+                        <img class="rodizio-gallery-image" src="{{ url_for('static', filename='images/rodiziocarne/51789f67b6f537970b148b1827b70e87.jpg') }}" alt="Espetinho de carne grelhado">
+                        <img class="rodizio-gallery-image" src="{{ url_for('static', filename='images/rodiziocarne/6acd0a60231472d63923d7aee91c1850.jpg') }}" alt="Alcatra assada na brasa">
+                        <img class="rodizio-gallery-image" src="{{ url_for('static', filename='images/rodiziocarne/eb556435b037d3a46523a3654707a6f5.jpg') }}" alt="Costela dourada na grelha">
+                    </div>
+                    <div class="rodizio-gallery-controls"><button class="rodizio-gallery-button" type="button" data-gallery-direction="previous" aria-label="Imagem anterior das carnes">←</button><span class="rodizio-gallery-status">01 <i>/ 04</i></span><button class="rodizio-gallery-button" type="button" data-gallery-direction="next" aria-label="Próxima imagem das carnes">→</button></div>
+                </div>
+                <div class="recipe-copy"><span class="recipe-number">01 / RODÍZIO DE CARNES</span><h2>Carnes<br><em>na brasa.</em></h2><p>Cortes selecionados, picanha, alcatra e costela preparados no espeto e servidos no ponto que você gosta.</p><span class="recipe-detail">Cortes nobres · Serviço à mesa</span></div>
+            </article>
+            <article class="rodizio-story recipe-story recipe-story-reverse">
+                <div class="rodizio-gallery" data-gallery="massas">
+                    <div class="rodizio-gallery-slides">
+                        <img class="rodizio-gallery-image is-active" src="{{ url_for('static', filename='images/rodiziomassaepizzas/00c8a9ed39118068621788d25481d98f.jpg') }}" alt="Lasanha da casa">
+                        <img class="rodizio-gallery-image" src="{{ url_for('static', filename='images/rodiziomassaepizzas/6c0f27655f0b226dcb07b59cd0c95639.jpg') }}" alt="Rigatoni recheado">
+                        <img class="rodizio-gallery-image" src="{{ url_for('static', filename='images/rodiziomassaepizzas/76ab8399fc3848c367486e1e77af0331.jpg') }}" alt="Pizza de pepperoni">
+                    </div>
+                    <div class="rodizio-gallery-controls"><button class="rodizio-gallery-button" type="button" data-gallery-direction="previous" aria-label="Imagem anterior das massas e pizzas">←</button><span class="rodizio-gallery-status">01 <i>/ 03</i></span><button class="rodizio-gallery-button" type="button" data-gallery-direction="next" aria-label="Próxima imagem das massas e pizzas">→</button></div>
+                </div>
+                <div class="recipe-copy"><span class="recipe-number">02 / RODÍZIO DE MASSAS</span><h2>Massas<br><em>&amp; pizzas.</em></h2><p>Uma sequência generosa de massas artesanais, lasanhas, recheados e pizzas saindo quentes para a sua mesa.</p><span class="recipe-detail">Massa artesanal · Serviço à vontade</span></div>
+            </article>
+        </section>
         <section class="recipes-list" aria-label="Receitas da casa">
-            <article class="recipe-story reveal-recipe" data-category="churrascos">
+            <article class="recipe-story reveal-recipe" data-category="pratos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/3fee43f885e97868d014e1a85865ce1b.jpg') }}" alt="Carne cozida ao molho com cenouras, pão e vinho tinto"></div>
                 <div class="recipe-copy"><span class="recipe-number">01 / DA PANELA</span><h2>Carne ao vinho<br><em>com ervas frescas.</em></h2><p>Uma carne macia, cozida lentamente no vinho tinto com cenouras e ervas. O tipo de prato que pede tempo, pão fresco e uma mesa sem pressa.</p><span class="recipe-detail">Cozimento lento · 4 pessoas</span></div>
             </article>
-            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="churrascos">
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="pratos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/a17e6815b49ce393f1401f62a734d75e.jpg') }}" alt="Filé fatiado servido com molho escuro e ervas"></div>
                 <div class="recipe-copy"><span class="recipe-number">02 / DO CORTE</span><h2>Filé fatiado<br><em>ao molho da casa.</em></h2><p>O corte selado por fora e rosado por dentro encontra um molho intenso, finalizado com ervas e um toque de manteiga.</p><span class="recipe-detail">Ponto perfeito · 2 pessoas</span></div>
             </article>
-            <article class="recipe-story reveal-recipe" data-category="churrascos">
+            <article class="recipe-story reveal-recipe" data-category="pratos">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/f3c28a336a05a8979a433721bd2ce4ce.jpg') }}" alt="Bife grelhado com tomates, legumes e batatas"></div>
                 <div class="recipe-copy"><span class="recipe-number">03 / DA BRASA</span><h2>Bife na brasa<br><em>com legumes tostados.</em></h2><p>Fogo alto, crosta marcada e o sabor limpo da carne. Servido com legumes tostados e batatas douradas.</p><span class="recipe-detail">Brasa viva · Serviço individual</span></div>
             </article>
             <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="rodizios">
                 <div class="recipe-photo"><img src="{{ url_for('static', filename='images/brasa a mesa.jpg') }}" alt="Seleção de cortes grelhados servida em uma travessa"></div>
                 <div class="recipe-copy"><span class="recipe-number">04 / PARA COMPARTILHAR</span><h2>Seleção da brasa<br><em>à mesa.</em></h2><p>Cortes grelhados no ponto, fatiados para compartilhar e acompanhados por molhos da casa. Uma receita que começa na escolha e termina na conversa.</p><span class="recipe-detail">Para dividir · Mesa farta</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziocarne/18e85bdf44209e9320a14be8174761f1.jpg') }}" alt="Picanha assada no espeto sendo fatiada"></div>
+                <div class="recipe-copy"><span class="recipe-number">05 / RODÍZIO DE CARNES</span><h2>Picanha<br><em>no espeto.</em></h2><p>Uma das estrelas da casa, assada lentamente no espeto para preservar a suculência e chegar à mesa no ponto ideal.</p><span class="recipe-detail">Corte nobre · Serviço à mesa</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziocarne/51789f67b6f537970b148b1827b70e87.jpg') }}" alt="Espeto de cubos de carne grelhados com limão e ervas"></div>
+                <div class="recipe-copy"><span class="recipe-number">06 / RODÍZIO DE CARNES</span><h2>Espetinho<br><em>da casa.</em></h2><p>Cubos de carne grelhados, dourados por fora e macios por dentro, servidos com ervas frescas e limão.</p><span class="recipe-detail">Grelhado na hora · Corte selecionado</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziocarne/6acd0a60231472d63923d7aee91c1850.jpg') }}" alt="Pedaço de carne assada servido no espeto"></div>
+                <div class="recipe-copy"><span class="recipe-number">07 / RODÍZIO DE CARNES</span><h2>Alcatra<br><em>na brasa.</em></h2><p>Alcatra assada no espeto, com sabor defumado e acabamento dourado para acompanhar os melhores momentos da mesa.</p><span class="recipe-detail">Brasa viva · Fatias generosas</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziocarne/eb556435b037d3a46523a3654707a6f5.jpg') }}" alt="Costelas suínas douradas na grelha com ervas"></div>
+                <div class="recipe-copy"><span class="recipe-number">08 / RODÍZIO DE CARNES</span><h2>Costela<br><em>defumada.</em></h2><p>Costela macia, dourada na grelha e finalizada com ervas, trazendo o aroma da brasa em cada pedaço.</p><span class="recipe-detail">Defumação lenta · Sabor intenso</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziomassaepizzas/00c8a9ed39118068621788d25481d98f.jpg') }}" alt="Lasanha de massa fresca com molho de tomate e queijo"></div>
+                <div class="recipe-copy"><span class="recipe-number">09 / RODÍZIO DE MASSAS</span><h2>Lasanha<br><em>da casa.</em></h2><p>Camadas de massa fresca, molho encorpado, carne bem temperada e queijo gratinado até ficar dourado.</p><span class="recipe-detail">Massa fresca · Queijo gratinado</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziomassaepizzas/6c0f27655f0b226dcb07b59cd0c95639.jpg') }}" alt="Rigatoni recheado com carne e molho cremoso"></div>
+                <div class="recipe-copy"><span class="recipe-number">10 / RODÍZIO DE MASSAS</span><h2>Rigatoni<br><em>recheado.</em></h2><p>Massa tubular recheada com carne, molho cremoso e queijo derretido, servida bem quente à mesa.</p><span class="recipe-detail">Recheio artesanal · Molho da casa</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="rodizios">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/rodiziomassaepizzas/76ab8399fc3848c367486e1e77af0331.jpg') }}" alt="Pizza de pepperoni com queijo derretido e massa dourada"></div>
+                <div class="recipe-copy"><span class="recipe-number">11 / RODÍZIO DE PIZZAS</span><h2>Pizza<br><em>de pepperoni.</em></h2><p>Massa dourada, molho de tomate, queijo derretido e pepperoni para completar o rodízio com muito sabor.</p><span class="recipe-detail">Massa artesanal · Fatias servidas na hora</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="bebidas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/bebidas/86c0a51564177a95fd520ae14e508996.jpg') }}" alt="Garrafa de destilado servida com um copo"></div>
+                <div class="recipe-copy"><span class="recipe-number">12 / BEBIDAS</span><h2>Destilado<br><em>da casa.</em></h2><p>Uma seleção de destilados para acompanhar a refeição, celebrar a noite e harmonizar com os sabores da brasa.</p><span class="recipe-detail">Carta selecionada · Serviço gelado</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="bebidas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/bebidas/a027c436bbd2c68340f5e618fb933d9a.jpg') }}" alt="Vinho do Porto servido com taças"></div>
+                <div class="recipe-copy"><span class="recipe-number">13 / BEBIDAS</span><h2>Vinho<br><em>do Porto.</em></h2><p>Vinho encorpado e aromático para bebericar sem pressa ou acompanhar uma sobremesa especial.</p><span class="recipe-detail">Tinto encorpado · Taça ou garrafa</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="bebidas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/bebidas/c420317bad07377e5241c37968817847.jpg') }}" alt="Espumante servido em duas taças"></div>
+                <div class="recipe-copy"><span class="recipe-number">14 / BEBIDAS</span><h2>Espumante<br><em>para celebrar.</em></h2><p>Bolhas leves, frescor e elegância para brindar aos encontros que merecem ser lembrados.</p><span class="recipe-detail">Servido gelado · Taça ou garrafa</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="sobremesas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/sobremesas/0ac8688175d417151fa8df60db39f194.jpg') }}" alt="Crepes recheados com creme e morangos"></div>
+                <div class="recipe-copy"><span class="recipe-number">15 / SOBREMESAS</span><h2>Crepe<br><em>de morango.</em></h2><p>Crepe dourado recheado com creme suave e morangos, finalizado com açúcar e calda da casa.</p><span class="recipe-detail">Frutas frescas · Finalização doce</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="sobremesas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/sobremesas/4edbb480b35bca5890a838fd63bed1b8.jpg') }}" alt="Sobremesa de chocolate com morangos e sorvete"></div>
+                <div class="recipe-copy"><span class="recipe-number">16 / SOBREMESAS</span><h2>Chocolate<br><em>com morangos.</em></h2><p>Chocolate cremoso, morangos frescos e uma combinação de texturas para fechar a refeição com indulgência.</p><span class="recipe-detail">Chocolate intenso · Para compartilhar</span></div>
+            </article>
+            <article class="recipe-story reveal-recipe" data-category="sobremesas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/sobremesas/5f0a0eb057f70d729d61ede4f9503820.jpg') }}" alt="Taça de sorvete com chocolate e morangos"></div>
+                <div class="recipe-copy"><span class="recipe-number">17 / SOBREMESAS</span><h2>Taça<br><em>doce tentação.</em></h2><p>Sorvete cremoso, chocolate, frutas e complementos crocantes em uma taça feita para celebrar.</p><span class="recipe-detail">Sorvete artesanal · Caldas da casa</span></div>
+            </article>
+            <article class="recipe-story recipe-story-reverse reveal-recipe" data-category="sobremesas">
+                <div class="recipe-photo"><img src="{{ url_for('static', filename='images/sobremesas/7c583de0ab387c0425991362ce92aeaf.jpg') }}" alt="Panquecas doces recheadas com creme de chocolate"></div>
+                <div class="recipe-copy"><span class="recipe-number">18 / SOBREMESAS</span><h2>Panqueca<br><em>de chocolate.</em></h2><p>Massa leve, recheio cremoso de chocolate e acabamento delicado para adoçar o final da noite.</p><span class="recipe-detail">Recheio cremoso · Servida quente</span></div>
             </article>
         </section>
     </main>

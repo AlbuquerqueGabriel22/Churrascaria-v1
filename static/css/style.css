@@ -10,6 +10,9 @@
 * {
   box-sizing: border-box;
 }
+[hidden] {
+  display: none !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -1141,6 +1144,101 @@ h2 em {
   background: var(--accent);
   border-color: var(--accent);
 }
+.rodizio-slider {
+  margin: 0 auto 110px;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+.rodizio-slides {
+  background: var(--ink);
+  color: var(--cream);
+  height: min(560px, 58vw);
+  min-height: 430px;
+  overflow: hidden;
+  position: relative;
+}
+.rodizio-slide {
+  background-image: linear-gradient(90deg, rgba(20, 18, 16, .9), rgba(20, 18, 16, .18)), var(--rodizio-image);
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+  opacity: 0;
+  padding: clamp(34px, 7vw, 80px);
+  position: absolute;
+  transform: translateY(100%);
+  transition: opacity .8s ease, transform .9s cubic-bezier(.2, .75, .25, 1);
+}
+.rodizio-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+.rodizio-slide.is-leaving {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.rodizio-slide-copy {
+  max-width: 440px;
+}
+.rodizio-slide-copy h2 {
+  font: 500 clamp(45px, 6vw, 78px) / .95 'Playfair Display', serif;
+  margin: 0 0 24px;
+}
+.rodizio-slide-copy h2 em {
+  color: #d8b298;
+  font-weight: 500;
+}
+.rodizio-slide-copy p {
+  color: rgba(245, 240, 232, .76);
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 370px;
+}
+.rodizio-slide-copy .recipe-detail {
+  border-color: rgba(245, 240, 232, .3);
+  color: var(--cream);
+}
+.rodizio-slide-number {
+  bottom: 34px;
+  font: 600 13px 'DM Sans', sans-serif;
+  letter-spacing: .1em;
+  position: absolute;
+  right: 42px;
+}
+.rodizio-slide-number i {
+  color: rgba(245, 240, 232, .55);
+  font-size: 10px;
+  font-style: normal;
+}
+.rodizio-controls {
+  bottom: 26px;
+  display: flex;
+  gap: 8px;
+  left: 42px;
+  position: absolute;
+  z-index: 2;
+}
+.rodizio-slider {
+  position: relative;
+}
+.rodizio-dot {
+  background: rgba(41, 40, 38, .3);
+  border: 0;
+  cursor: pointer;
+  height: 2px;
+  padding: 0;
+  transition: background .3s ease, width .3s ease;
+  width: 28px;
+}
+.rodizio-dot.is-active {
+  background: var(--accent);
+  width: 56px;
+}
+.recipe-story.is-filter-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
 .recipes-list {
   position: relative;
 }
@@ -1277,3 +1375,115 @@ h2 em {
     white-space: nowrap;
   }
 }
+  .rodizio-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    margin: 0 auto 150px;
+    padding: 0 clamp(24px, 8vw, 120px);
+  }
+  .rodizio-story {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+  }
+  .rodizio-gallery {
+    min-height: 520px;
+    overflow: hidden;
+    position: relative;
+  }
+  .rodizio-gallery-slides,
+  .rodizio-gallery-image {
+    height: 100%;
+    width: 100%;
+  }
+  .rodizio-gallery-slides {
+    position: relative;
+  }
+  .rodizio-gallery-image {
+    display: block;
+    inset: 0;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    transform: scale(1.04);
+    transition: opacity .5s ease, transform .7s ease;
+  }
+  .rodizio-gallery-image.is-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+  .rodizio-gallery-controls {
+    align-items: center;
+    background: rgba(41, 40, 38, .86);
+    bottom: 0;
+    color: var(--cream);
+    display: flex;
+    gap: 14px;
+    padding: 12px 16px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+  }
+  .rodizio-gallery-button {
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(245, 240, 232, .5);
+    color: var(--cream);
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+  }
+  .rodizio-gallery-button:hover {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .rodizio-gallery-status {
+    font-size: 10px;
+    letter-spacing: .12em;
+    min-width: 38px;
+    text-align: center;
+  }
+  .rodizio-gallery-status i {
+    color: rgba(245, 240, 232, .6);
+    font-size: 9px;
+    font-style: normal;
+  }
+  .rodizio-story .recipe-copy {
+    transform: none;
+  }
+  .rodizio-story.recipe-story-reverse .rodizio-gallery {
+    order: 2;
+  }
+  .rodizio-story.recipe-story-reverse .recipe-copy {
+    order: 1;
+  }
+  @media (max-width: 700px) {
+    .rodizio-slider {
+      gap: 90px;
+      padding: 0 20px;
+    }
+    .rodizio-story,
+    .rodizio-story.recipe-story-reverse {
+      display: flex;
+      flex-direction: column;
+    }
+    .rodizio-story.recipe-story-reverse .rodizio-gallery,
+    .rodizio-story.recipe-story-reverse .recipe-copy {
+      order: initial;
+    }
+    .rodizio-gallery {
+      min-height: 390px;
+    }
+    .rodizio-story .recipe-copy {
+      min-height: auto;
+      padding: 34px 26px 38px;
+    }
+  }
